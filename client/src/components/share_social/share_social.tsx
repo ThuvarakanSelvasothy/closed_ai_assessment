@@ -28,8 +28,10 @@ export default function ShareSocial({}: Props) {
                 className=" w-12 h-12 p-1 rounded-md object-cover "
               />{" "}
               <div>
-                <p className=" font-medium text-primary-700">Company</p>
-                <p className="  text-primary-700">Closed.AI</p>
+                <p className=" text-sm font-semibold text-primary-700">
+                  Company
+                </p>
+                <p className=" text-lg  text-primary-700">Closed.AI</p>
               </div>
             </div>
             <div className=" flex items-center gap-4 ">
@@ -39,23 +41,30 @@ export default function ShareSocial({}: Props) {
                 className=" w-12 h-12 p-1 rounded-md object-cover "
               />{" "}
               <div>
-                <p className=" font-medium text-primary-700">Author</p>
-                <p className="  text-primary-700">Thuvarakan Selvasothy</p>
+                <p className=" text-sm font-semibold text-primary-700">
+                  Author
+                </p>
+                <p className=" text-lg  text-primary-700">
+                  Thuvarakan Selvasothy
+                </p>
               </div>
             </div>
           </div>
-          <div className=" flex gap-4 items-center h-full justify-end  w-full px-4 py-6 lg:py-1 ">
-            <FacebookShareButton url={shareUrl} hashtag={"#portfolio..."}>
-              <FacebookIcon size={40} round={true} />
-            </FacebookShareButton>
+          <div className="  px-4 py-6 lg:py-1 ">
+            <p className=" mb-2 text-primary-700 font-semibold ">Share URL</p>
+            <div className=" flex gap-4 items-center h-full justify-end  w-full  ">
+              <FacebookShareButton url={shareUrl} hashtag={"#portfolio..."}>
+                <FacebookIcon size={40} round={true} />
+              </FacebookShareButton>
 
-            <WhatsappShareButton url={shareUrl}>
-              <WhatsappIcon size={40} round={true} />
-            </WhatsappShareButton>
+              <WhatsappShareButton url={shareUrl}>
+                <WhatsappIcon size={40} round={true} />
+              </WhatsappShareButton>
 
-            <LinkedinShareButton url={shareUrl}>
-              <LinkedinIcon size={40} round={true} />
-            </LinkedinShareButton>
+              <LinkedinShareButton url={shareUrl}>
+                <LinkedinIcon size={40} round={true} />
+              </LinkedinShareButton>
+            </div>
           </div>
         </div>
       </div>

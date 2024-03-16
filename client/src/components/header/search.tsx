@@ -1,7 +1,5 @@
-import React from "react";
-import Search22 from "./search";
 import GoogleAutoComplete, { IAutocompletValue } from "./google_auto_complete";
-import Loader from "../../assets/svg/loader";
+import loaderRing from "../../assets/svg/loader.svg";
 
 type Props = {
   onChange?: (data: IAutocompletValue | undefined) => void;
@@ -20,7 +18,7 @@ export default function Search({ onChange, isLoading }: Props) {
             }}
           />{" "}
           <div className=" w-8 flex justify-center items-center ">
-            {isLoading && <Loader width={28} />}
+            {isLoading && <img src={loaderRing} alt="" className=" w-8 h-8 " />}
           </div>
         </div>
       </div>

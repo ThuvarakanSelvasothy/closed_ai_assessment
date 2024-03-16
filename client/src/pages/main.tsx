@@ -1,4 +1,4 @@
-import React, { useEffect, useLayoutEffect, useState } from "react";
+import React, { useLayoutEffect, useState } from "react";
 import CurrentWeather from "../components/cureent_weather/current_weather";
 import HourlyForcast from "../components/hourly_forcast/hourly_forcast";
 import DailyForcast from "../components/daily_forcast/daily_forcast";
@@ -12,16 +12,18 @@ import CurrentWeatherSkelton from "../components/cureent_weather/current_weather
 import HourlyForcastSkelton from "../components/hourly_forcast/hourly_forcast_skelton";
 import DailyForcastSkelton from "../components/daily_forcast/daily_forcast_skelton";
 import { toast } from "react-toastify";
+import { weatherURL } from "../services/data_fetcher/enpoints";
 
 export default function Main() {
   const dispatch = useAppDispatch();
   const weatheData = useAppSelector((state) => state.systemState.weatherData);
   const [isLoading, setisLoading] = useState(false);
+  // call api when user search
   const handleSearch = (param: string) => {
     console.log(param);
     setisLoading(true);
     fetchData({
-      url: "http://localhost:3001/api/weather",
+      url: weatherURL,
       method: "POST",
       body: {
         q: param,
@@ -43,7 +45,9 @@ export default function Main() {
       })
       .finally(() => setisLoading(false));
   };
-  useEffect(() => {
+
+  // call api when user is enter and alow current loacation
+  useLayoutEffect(() => {
     const getLocation = () => {
       if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(
@@ -62,10 +66,9 @@ export default function Main() {
       }
     };
     const handleSearch = (param: string) => {
-      console.log(param);
       setisLoading(true);
       fetchData({
-        url: "http://localhost:3001/api/weather",
+        url: weatherURL,
         method: "POST",
         body: {
           q: param,

@@ -68,7 +68,7 @@ export default function HourlyForcast() {
         </Swiper>
         <div className=" mt-2 ">
           <p className=" font-semibold text-2xl text-primary-900 ">Tomorrow</p>
-          <div className="mt-1 w-full rounded-xl overflow-hidden  min-h-16 lg:max-h-16 max-h-full flex lg:flex-row flex-col  justify-between ">
+          <div className="mt-1 w-full rounded-xl overflow-hidden  min-h-16 lg:max-h-20 max-h-full flex lg:flex-row flex-col  justify-between ">
             <div className="bg-primary-300 w-full  ">
               <div className=" flex justify-between items-center gap-2 p-2 ">
                 <div className="w-full">

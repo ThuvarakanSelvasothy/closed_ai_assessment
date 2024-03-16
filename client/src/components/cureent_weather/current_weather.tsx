@@ -6,6 +6,7 @@ import { formatTemperature } from "../../services/helper/format_temp";
 import { fetchData } from "../../services/data_fetcher/data-fetcher";
 import { generateRandomNumber } from "../../services/helper/random_number";
 import { IoReload } from "react-icons/io5";
+import { giphyURL } from "../../services/data_fetcher/enpoints";
 type Props = {};
 
 export default function CurrentWeather({}: Props) {
@@ -17,14 +18,12 @@ export default function CurrentWeather({}: Props) {
   );
   const tempUnit = useAppSelector((state) => state.systemState.tempUnit);
   const [gifArray, setGifArray] = useState<string[]>([]);
-  const [isLoading, setIsLoading] = useState(false);
   const [viewedGif, setViewedGif] = useState<string>("");
 
   useLayoutEffect(() => {
-    setIsLoading(true);
     const getGif = () => {
       fetchData({
-        url: "http://localhost:3001/api/giphy",
+        url: giphyURL,
         method: "POST",
         body: {
           q: current?.phrase || "Weather",
@@ -41,8 +40,7 @@ export default function CurrentWeather({}: Props) {
         })
         .catch((err) => {
           console.log(err);
-        })
-        .finally(() => setIsLoading(false));
+        });
     };
     getGif();
   }, [current]);

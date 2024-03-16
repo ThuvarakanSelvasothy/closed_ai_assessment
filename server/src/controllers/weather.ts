@@ -2,7 +2,7 @@ import axios from "axios";
 import { Request, Response } from "express";
 import { dummyWeatherResponce } from "../service/data_service/data_services";
 
-export const getWeather2 = async (req: Request, res: Response) => {
+export const getWeather = async (req: Request, res: Response) => {
   console.log("getWeather");
   const { q } = req.body;
   const apiKey = process.env.ACCUWEATHER_API_KEY;
@@ -89,7 +89,7 @@ export const getData = async (param: number): Promise<any> => {
   });
 };
 
-export const getWeather = async (req: Request, res: Response) => {
+export const getDemoWeather = async (req: Request, res: Response) => {
   console.log("getDummyWeather");
   setTimeout(() => {
     res.json({

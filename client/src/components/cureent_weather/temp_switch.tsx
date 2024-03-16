@@ -2,15 +2,7 @@ import React, { useState } from "react";
 import { useAppDispatch } from "../../state_manager/hooks";
 import { UpdateTempUnit } from "../../state_manager/slices";
 
-interface IButton1 {
-  onChange?: (event: boolean) => void;
-  handleStyle?: React.CSSProperties;
-  buttonStyle?: React.CSSProperties;
-  value?: boolean;
-  color?: string;
-}
-
-export default function TempSwitch({}: IButton1) {
+export default function TempSwitch() {
   const [initvalue, setinitvalue] = useState(false);
   const dispatch = useAppDispatch();
   const handleClick = () => {
@@ -21,7 +13,7 @@ export default function TempSwitch({}: IButton1) {
   return (
     <div
       className={` relative w-16 h-8 items-center p-[2px]  rounded-full flex cursor-pointer transition-all delay-200 ease-in-out
-      ${initvalue ? " bg-primary-500 " : " bg-gray-300"}
+      ${initvalue ? " bg-primary-500 " : " bg-primary-100"}
       `}
       onClick={() => handleClick()}
     >

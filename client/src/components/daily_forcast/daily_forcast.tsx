@@ -1,13 +1,9 @@
 import React from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
-import { dateTimeToData } from "../../services/helper/datetime_to_date";
 import { useAppSelector } from "../../state_manager/hooks";
 import { formatTemperature } from "../../services/helper/format_temp";
 
-type Props = {};
-
-export default function DailyForcast({}: Props) {
+export default function DailyForcast() {
   const transformedData = useAppSelector(
     (state) => state.systemState.weatherData.dailyForcast
   );
