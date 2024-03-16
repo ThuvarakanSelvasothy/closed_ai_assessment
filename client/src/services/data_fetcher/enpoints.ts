@@ -1,9 +1,7 @@
-export const name = (params: any) => {};
+// URL for dev purpose
+// export const weatherURL = `http://localhost:8080/api/demo/weather`;
+// export const giphyURL = `http://localhost:8080/api/giphy`;
 
-// const baseURL = process.env?.REACT_APP_BASE_URL;
-// export const weatherURL = `${baseURL}/api/demo/weather`;
-// export const giphyURL = `${baseURL}/api/giphy`;
-
-// URL for build purpose
+//URL for build purpose
 export const weatherURL = `/api/weather`;
 export const giphyURL = `/api/giphy`;
