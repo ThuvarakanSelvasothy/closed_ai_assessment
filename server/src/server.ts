@@ -38,8 +38,10 @@ app.get("/api/*", getNotFound);
 
 // static View
 app.use(express.static("../client/build"));
+console.log(path.join(__dirname, "../client/build", "index.html"));
 app.use((req, res) => {
   res.sendFile(path.join(__dirname, "../client/build", "index.html"));
+
   // res.sendFile(path.join(__dirname, "./view", "index.html"));
 });
 // Start the server

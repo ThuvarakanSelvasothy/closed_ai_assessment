@@ -2,10 +2,10 @@
   "name": "server",
   "version": "1.0.0",
   "description": "",
-  "main": "dist/index.js",
+  "main": "dist/server.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node dist/server.ts --exec ts-node",
+    "start": "node dist/server.js --exec ts-node",
     "dev": "nodemon src/server.ts --exec ts-node"
   },
   "keywords": [],
